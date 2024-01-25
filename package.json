@@ -17,6 +17,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "load-plot-data": "node JsonParentData.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
