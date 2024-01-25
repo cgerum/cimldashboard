@@ -15,8 +15,13 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
+          # Assuming your project is a Node.js project
           npm ci
           npm run build
+
+      - name: Debug Print Build Folder
+        run: |
+          ls -R build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
