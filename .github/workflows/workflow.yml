@@ -15,7 +15,7 @@ jobs:
           npm ci
           npm run build
       - name: Display Directory Contents 📂
-        run: ls -R /cifar10_example/trained_models/test/mobilenetv3_small_100/plots/
+        run: ls -R /cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_confusion.json
 
       - name: Json3 🔧
         run: cp -r /public/cifar10_example/trained_models/test/mobilenetv3_small_100 build/
