@@ -1,0 +1,6 @@
+defaults:
+  - timm_resnet18
+
+
+decoder: true
+classifier: false

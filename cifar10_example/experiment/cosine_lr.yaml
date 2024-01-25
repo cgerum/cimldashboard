@@ -1,0 +1,20 @@
+# @package _global_
+
+defaults:
+  - override /scheduler: cosine_warm
+
+experiment_id: cosine_lr
+trainer:
+  max_epochs: 300
+
+scheduler:
+  T_0: 10
+  T_mult: 2
+
+hydra:
+  mode: MULTIRUN
+  sweep:
+    subdir: lr=${optimizer.lr}
+  sweeper:
+    params:
+      optimizer.lr: 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9
