@@ -61,7 +61,7 @@ const JsonDataFetch = ({ onDataSet }) => {
     return <h1>Lade...</h1>;
   }
 
-  return <div>ok</div>;
+  return <div className="uppercase font-bold">ok</div>;
 };
 
 export default JsonDataFetch;
