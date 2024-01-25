@@ -1,7 +1,9 @@
-function App() {
+import JsonParentData from "./JsonParentData";
+
+function App({ data }) {
   return (
     <h1>
-      <button>Button</button>
+      <JsonParentData />
     </h1>
   );
 }
