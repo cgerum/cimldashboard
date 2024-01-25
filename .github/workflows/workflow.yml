@@ -15,9 +15,9 @@ jobs:
           npm ci
           npm run build
       - name: Display Directory Contents 📂
-        run: ls -R /public/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/
+        run: ls -R /cifar10_example/trained_models/test/mobilenetv3_small_100/plots/
 
-      - name: Json3 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - name: Json3 🔧
         run: cp -r /public/cifar10_example/trained_models/test/mobilenetv3_small_100 build/
 
       - name: Deploy 🚀
