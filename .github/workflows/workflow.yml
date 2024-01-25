@@ -14,6 +14,12 @@ jobs:
         run: |
           npm ci
           npm run build
+      - name: Json1 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: cp /cifar10_example/trained_models/test/mobilenetv3_small_100/*.json build/
+      - name: Json2 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: cp -r /cifar10_example/trained_models/test/mobilenetv3_small_100 build/
+      - name: Json3 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: cp -r /public/cifar10_example/trained_models/test/mobilenetv3_small_100 build/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
