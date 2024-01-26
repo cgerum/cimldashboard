@@ -54,7 +54,7 @@ const JsonDataFetch = ({ onDataSet }) => {
 
   useEffect(() => {
     fetchPlotEachData();
-  }, [dataSetCallback]);
+  }, [dataSetCallback, fetchPlotEachData]);
 
   if (!data) {
     return <h1>Lade...</h1>;
