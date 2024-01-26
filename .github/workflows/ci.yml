@@ -1,1 +1,20 @@
+name: Test Build
 
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install and Build 🔧
+        run: |
+          # Assuming your project is a Node.js project
+          npm ci
+          npm run build
