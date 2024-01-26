@@ -2,10 +2,10 @@ import JsonParentData from "./JsonParentData";
 
 function App({ data }) {
   return (
-    <h1>
+    <div>
       <h1>kein Plot dann kein daten</h1>
       <JsonParentData />
-    </h1>
+    </div>
   );
 }
 

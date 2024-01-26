@@ -44,7 +44,7 @@ const JsonDataFetch = ({ onDataSet }) => {
     }
   };
 
-  const fetchDataForPaths = async () => {
+  const fetchPlotEachData = async () => {
     const promises = jsonPlotData.map(fetchPlotData);
     const response = await Promise.all(promises);
 
@@ -53,8 +53,7 @@ const JsonDataFetch = ({ onDataSet }) => {
   };
 
   useEffect(() => {
-    fetchDataForPaths();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    fetchPlotEachData();
   }, [dataSetCallback]);
 
   if (!data) {
