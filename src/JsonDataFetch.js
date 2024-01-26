@@ -52,10 +52,10 @@ const JsonDataFetch = ({ onDataSet }) => {
     dataSetCallback(response);
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetchPlotEachData();
-  }, [dataSetCallback]);
+  }, [dataSetCallback]); // eslint-disable-line react-hooks/exhaustive-deps
+  
 
   if (!data) {
     return <h1>Lade...</h1>;
