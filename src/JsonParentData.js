@@ -14,6 +14,7 @@ const JsonParentData = () => {
   return (
     <div>
       <JsonDataFetch onDataSet={handleDataSet} />
+      {dataSet && console.log("Loaded Data:", dataSet)}
 
       {dataSet && dataSet.length >= 1 && <RocPlot data={dataSet[0]} />}
       {dataSet && dataSet.length >= 1 && <CurvePlot data={dataSet[1]} />}

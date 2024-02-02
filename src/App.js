@@ -1,10 +1,11 @@
 import JsonParentData from "./JsonParentData";
+import LogsParentData from "./LogsParentData";
 
 function App({ data }) {
   return (
     <div>
-      <h1>kein Plot dann kein daten</h1>
       <JsonParentData />
+      <LogsParentData />
     </div>
   );
 }

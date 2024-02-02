@@ -4,22 +4,21 @@ const JsonDataFetch = ({ onDataSet }) => {
   const [data, setData] = useState(null);
 
   const jsonPlotData = [
-    "/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_roc.json",
+    //MOBILENETV18
 
+    "/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_roc.json",
     "/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_pr_curve.json",
+    "/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_confusion.json",
 
     //RESNET18
     "/cifar10_example/trained_models/test/resnet18/plots/test_confusion.json",
-    "/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_confusion.json",
 
-    // "/cifar10_example/trained_models/test/resnet18/logs/metrics.jsonl",
-    "/cifar10_example/trained_models/test/resnet18/val_results.json",
+    // "/cifar10_example/trained_models/test/resnet18/val_results.json",
 
-    //MOBILENETV18
-    "/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_pr_curve.json",
-    "/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_roc.json",
-    // "/cifar10_example/trained_models/test/mobilenetv3_small_100/logs/metrics.jsonl",
-    "/cifar10_example/trained_models/test/mobilenetv3_small_100/val_results.json",
+    // "/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_pr_curve.json",
+    // "/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_roc.json",
+
+    // "/cifar10_example/trained_models/test/mobilenetv3_small_100/val_results.json",
   ];
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -55,13 +54,23 @@ const JsonDataFetch = ({ onDataSet }) => {
   useEffect(() => {
     fetchPlotEachData();
   }, [dataSetCallback]); // eslint-disable-line react-hooks/exhaustive-deps
-  
 
   if (!data) {
-    return <h1>Lade...</h1>;
+    return (
+      <div className="flex items-center justify-center">
+        <div
+          className="inline-block h-16 w-16 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+          role="status"
+        >
+          <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+            Loading...
+          </span>
+        </div>
+      </div>
+    );
   }
 
-  return <div className="uppercase font-bold">ok</div>;
+  return <div className="uppercase font-bold"></div>;
 };
 
 export default JsonDataFetch;

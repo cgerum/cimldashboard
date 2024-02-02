@@ -4,7 +4,7 @@ import Plot from "react-plotly.js";
 const Curve = ({ data }) => {
   const { precision, recall, categories } = data;
 
-  const chartData = categories.map((category, index) => ({
+  const plotData = categories.map((category, index) => ({
     x: precision[index],
     y: recall[index],
     type: "scatter",
@@ -22,7 +22,7 @@ const Curve = ({ data }) => {
     },
   };
 
-  return <Plot data={chartData} layout={layout} />;
+  return <Plot data={plotData} layout={layout} />;
 };
 
 export default Curve;

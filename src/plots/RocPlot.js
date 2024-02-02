@@ -4,12 +4,15 @@ import Plot from "react-plotly.js";
 const RocPlot = ({ data }) => {
   const { fpr, tpr, categories } = data;
 
-  const chartData = categories.map((category, index) => ({
+  const plotData = categories.map((category, index) => ({
     x: fpr[index],
     y: tpr[index],
     type: "scatter",
     mode: "lines",
     name: category,
+    marker: {
+      size: 800,
+    },
   }));
 
   const layout = {
@@ -20,9 +23,24 @@ const RocPlot = ({ data }) => {
     yaxis: {
       title: "Precision",
     },
+
+    width: 800,
+    height: 600,
+
+    // font: {
+    //   family: "Arial, sans-serif ",
+    //   size: 20,
+    //   color: "black",
+    // },
+    // paper_bgcolor: "blue",
+    // plot_bgcolor: "lightgrey",
   };
 
-  return <Plot data={chartData} layout={layout} />;
+  return (
+    <div>
+      <Plot data={plotData} layout={layout} />
+    </div>
+  );
 };
 
 export default RocPlot;
