@@ -76,7 +76,7 @@ const LinePlot = ({ data }) => {
       title: "Epoch",
     },
     yaxis: {
-      title: "Validation Accuracy /Loss",
+      title: "Validation/Train Accuracy /Loss",
     },
   };
 
@@ -101,7 +101,7 @@ const LinePlot = ({ data }) => {
     {
       x: filterMobilenetvLogsMetrics.map((point) => point.step),
       y: filterMobilenetvLogsMetrics.map((point) => point["lr-SGD"]),
-      type: "scatter",
+      type: "bar",
       mode: "lines",
       name: "lr-SGD v step",
     },
