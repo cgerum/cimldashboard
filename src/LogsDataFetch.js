@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 const LogsDataFetch = ({ onDataLoaded }) => {
   const [data, setData] = useState([]);
@@ -10,6 +12,7 @@ const LogsDataFetch = ({ onDataLoaded }) => {
     const jsonDataPaths = [
       "/cifar10_example/trained_models/test/resnet18/logs/metrics.jsonl",
       "/cifar10_example/trained_models/test/mobilenetv3_small_100/logs/metrics.jsonl",
+      "/cifar10_example/trained_models/history.jsonl",
     ];
 
     const fetchData = async () => {
@@ -72,16 +75,9 @@ const LogsDataFetch = ({ onDataLoaded }) => {
 
   if (!data) {
     return (
-      <div className="flex items-center justify-center">
-        <div
-          className="inline-block h-16 w-16 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-          role="status"
-        >
-          <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-            Loading...
-          </span>
-        </div>
-      </div>
+      <Box sx={{ display: "flex" }}>
+        <CircularProgress />
+      </Box>
     );
   }
 

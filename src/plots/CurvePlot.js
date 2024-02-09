@@ -14,11 +14,28 @@ const Curve = ({ data }) => {
 
   const layout = {
     title: "MultiClassPrecisionRecallCurve",
+    font: { color: "#d1d3da" },
     xaxis: {
       title: "Recall",
     },
     yaxis: {
       title: "Precision",
+    },
+    width: "100%",
+    height: "100%",
+
+    // font: {
+    //   family: "Arial, sans-serif ",
+    //   size: 20,
+    //   color: "black",
+    // },
+    paper_bgcolor: "rgba(0, 0, 0, 0)",
+    plot_bgcolor: "rgba(0, 0, 0, 0)",
+    margin: {
+      l: 55,
+      r: 20,
+      b: 50,
+      t: 80,
     },
   };
 
