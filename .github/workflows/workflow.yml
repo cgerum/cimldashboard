@@ -25,9 +25,6 @@ jobs:
       - name: Display Directory Contents
         run: ls -R public/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/
 
-      - name: Display Directory Contents
-        run: ls -R /cifar10_example/trained_models/test/mobilenetv3_small_100/plots/
-
       - name: Json3 🔧
         run: cp -r /public/cifar10_example/trained_models/test/mobilenetv3_small_100 build/
 
